@@ -1,4 +1,4 @@
-baseURL: "http://localhost:1313/"
+baseURL: "https://bowenxieoregon.github.io/"
 title: "Bowen Xie's Blog"
 languageCode: "en"
 theme: ["PaperMod"]
