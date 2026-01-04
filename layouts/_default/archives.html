@@ -1,0 +1,65 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description }}
+  </div>
+  {{- end }}
+</header>
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+
+{{- if site.Params.ShowAllPagesInArchive }}
+{{- $pages = site.RegularPages }}
+{{- end }}
+
+<div class="archives-timeline">
+  {{- range $pages.GroupByPublishDate "2006" }}
+  {{- if ne .Key "0001" }}
+  {{- $year := replace .Key "0001" "" }}
+  
+  <div class="archive-year-section">
+    <h2 class="archive-year-header">
+      <span class="year-badge">{{ $year }}</span>
+      <span class="year-count">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</span>
+    </h2>
+    
+    <div class="archive-posts-list">
+      {{- range .Pages }}
+      {{- if eq .Kind "page" }}
+      <article class="archive-post-item">
+        <a href="{{ .Permalink }}" class="archive-post-link">
+          <time class="archive-date" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format "Jan 02" }}
+          </time>
+          <div class="archive-post-content">
+            <h3 class="archive-post-title">
+              {{ .Title | markdownify }}
+              {{- if .Draft }}<span class="draft-badge">Draft</span>{{- end }}
+            </h3>
+            {{- if .Description }}
+            <p class="archive-post-desc">{{ .Description | truncate 100 }}</p>
+            {{- end }}
+            {{- with .Params.tags }}
+            <div class="archive-tags">
+              {{- range first 3 . }}
+              <span class="archive-tag">{{ . }}</span>
+              {{- end }}
+            </div>
+            {{- end }}
+          </div>
+        </a>
+      </article>
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+  
+  {{- end }}
+  {{- end }}
+</div>
+
+{{- end }}{{/* end main */}}
+
