@@ -33,7 +33,7 @@ params:
     repoID: "R_kgDOQzU3pw"
     category: "General"
     categoryID: "DIC_kwDOQzU3p84C0jXY"
-    mapping: "pathname"
+    mapping: "url"
     reactionsEnabled: "1"
     emitMetadata: "0"
     theme: "preferred_color_scheme"
