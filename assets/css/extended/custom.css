@@ -2,6 +2,13 @@
    Custom Styles
    ========================================================================== */
 
+/* Fix alignment - remove auto-centering from header */
+.post-header,
+.page-header {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /* Code blocks */
 .chroma {
   background-color: unset;

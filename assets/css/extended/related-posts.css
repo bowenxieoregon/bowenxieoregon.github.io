@@ -1,56 +1,54 @@
 /* Related Posts Section */
 .related-posts {
-  margin-top: 4rem;
-  padding-top: 2rem;
+  margin-top: var(--content-gap);
+  padding-top: var(--content-gap);
   border-top: 1px solid var(--border);
 }
 
 .related-posts h2 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin: 0 0 1rem 0;
   color: var(--primary);
 }
 
 .related-posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .related-post-card {
   display: block;
-  padding: 1.25rem;
+  padding: 0.75rem 1rem;
   background: var(--code-bg);
-  border-radius: 8px;
+  border-radius: var(--radius);
   text-decoration: none;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
+  transition: background 0.2s ease;
+  border: 1px solid var(--border);
 }
 
 .related-post-card:hover {
-  border-color: var(--border);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--border);
 }
 
 .related-post-card h3 {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  font-weight: 500;
   color: var(--primary);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.25rem 0;
   line-height: 1.4;
 }
 
 .related-post-card:hover h3 {
-  color: var(--secondary);
+  box-shadow: 0 1px 0;
 }
 
 .related-post-desc {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--secondary);
-  margin: 0 0 0.75rem 0;
-  line-height: 1.5;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -61,29 +59,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--secondary);
-  opacity: 0.8;
-}
-
-/* Dark mode adjustments */
-[data-theme="dark"] .related-post-card {
-  background: rgba(255, 255, 255, 0.03);
-}
-
-[data-theme="dark"] .related-post-card:hover {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .related-posts-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .related-posts {
-    margin-top: 3rem;
-  }
 }
 
