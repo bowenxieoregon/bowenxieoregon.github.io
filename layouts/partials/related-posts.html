@@ -1,0 +1,54 @@
+{{- $related := slice -}}
+
+{{- /* Find related posts by tags */ -}}
+{{- $tags := .Params.tags -}}
+{{- if $tags -}}
+  {{- range $tag := $tags -}}
+    {{- range where (where $.Site.RegularPages "Type" "posts") ".Params.tags" "intersect" (slice $tag) -}}
+      {{- if ne .Permalink $.Permalink -}}
+        {{- $related = $related | append . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Remove duplicates and limit to 3 */ -}}
+{{- $related = $related | uniq | first 3 -}}
+
+{{- /* Fallback: if no related posts by tags, show recent posts */ -}}
+{{- if eq (len $related) 0 -}}
+  {{- range first 3 (where .Site.RegularPages "Type" "posts") -}}
+    {{- if ne .Permalink $.Permalink -}}
+      {{- $related = $related | append . -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $related = $related | first 3 -}}
+{{- end -}}
+
+{{- if gt (len $related) 0 -}}
+<section class="related-posts">
+  <h2>Related Posts</h2>
+  <div class="related-posts-grid">
+    {{- range $related -}}
+    <a href="{{ .Permalink }}" class="related-post-card">
+      <article>
+        <h3>{{ .Title }}</h3>
+        {{- if .Description -}}
+        <p class="related-post-desc">{{ .Description | truncate 100 }}</p>
+        {{- else if .Summary -}}
+        <p class="related-post-desc">{{ .Summary | plainify | truncate 100 }}</p>
+        {{- end -}}
+        <div class="related-post-meta">
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+          {{- if .ReadingTime }}
+          <span>·</span>
+          <span>{{ .ReadingTime }} min read</span>
+          {{- end }}
+        </div>
+      </article>
+    </a>
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}
+

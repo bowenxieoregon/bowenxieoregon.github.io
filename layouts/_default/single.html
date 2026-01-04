@@ -57,6 +57,9 @@
     {{- end }}
   </footer>
 
+  {{- /* Related Posts */ -}}
+  {{- partial "related-posts.html" . }}
+
   {{- if (.Param "comments") }}
   {{- partial "comments.html" . }}
   {{- end }}
