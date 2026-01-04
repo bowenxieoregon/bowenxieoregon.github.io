@@ -1,0 +1,21 @@
+.profile_inner h1 {
+  width: 16em; 
+  height: 1.25em;
+  border-right: 1px solid transparent;
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.typing-effect {
+  animation: typing 3.5s steps(20, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 16em; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: currentColor; }
+}

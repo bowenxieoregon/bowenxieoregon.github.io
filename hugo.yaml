@@ -8,64 +8,118 @@ enableRobotsTXT: true
 pagination:
   pagerSize: 10
 
-# 输出内容（PaperMod 推荐）
+hasCJKLanguage: false
+enableInlineShortcodes: true
+enableEmoji: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+pluralizelisttitles: false
+pygmentsUseClasses: true
+comments: true
+
+defaultContentLanguage: en
+
+# Output formats (PaperMod recommendation)
 outputs:
   home:
     - HTML
     - RSS
     - JSON   # required for search
 
-# Markdown & 渲染设置
+# Markdown & rendering settings
 markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: abap
   goldmark:
     renderer:
-      unsafe: true   # allow raw HTML if needed
-  highlight:
-    noClasses: false
-    guessSyntax: true
-    lineNos: false
+      unsafe: true
 
 params:
+  assets:
+    disableHLJS: true
+  ViewCount: true
   comments: true
   env: production
 
   defaultTheme: auto
   disableThemeToggle: false
 
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
   ShowBreadCrumbs: true
 
-  ShowToc: true
+  ShowShareButtons: false
+  ShowFullTextinRSS: true
+  Showtoc: true
   TocOpen: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: false
+
+  hideFooter: true
+  ShowAllPagesInArchive: true
 
   math: true
-  title: "Bowen Xie's blog"
+  title: "Bowen Xie's Blog"
   description: "Notes on CS, AI, Systems and Engineering"
   author: "Bowen Xie"
+  hideAuthor: true
   images:
-    - "/images/og-default.png"
+    - "/images/default.jpg"
+
+  profileMode:
+    enabled: true
+    title: "We Live. We Learn. We Iterate."
+    subtitle: |
+      👋 Hello! Welcome To My Webpage.
+      
+      👇 My Contact Info
+    imageUrl: "/images/default.jpg"
+    imageTitle: "Bowen Xie"
+    imageWidth: 160
+    imageHeight: 160
+
   socialIcons:
-    - name: github
+    - name: "X"
+      url: "https://x.com/AlexBenton_OR"
+    - name: "Github"
       url: "https://github.com/bowenxieoregon"
+    - name: "email"
+      url: "mailto:xiebo@oregonstate.edu"
+    - name: "RSS"
+      url: /index.xml
 
 menu:
   main:
+    - identifier: mainpage
+      name: Main 
+      url: /
+      weight: 1
     - identifier: posts
       name: Posts
       url: /posts/
-      weight: 1
+      weight: 2
     - identifier: archives
       name: Archives
       url: /archives/
-      weight: 2
+      weight: 3
     - identifier: search
       name: Search
       url: /search/
-      weight: 3
+      weight: 4
     - identifier: tags
       name: Tags
       url: /tags/
-      weight: 4
-
+      weight: 5
+    - identifier: publications
+      name: Publications
+      url: /publications/
+      weight: 6
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 7

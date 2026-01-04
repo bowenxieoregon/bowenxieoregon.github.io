@@ -1,0 +1,33 @@
+<footer class="footer">
+  {{- if or (eq .Site.Language.Lang "zh") (eq .Site.Language.Lang "zh-cn") (eq .Site.Language.Lang "zh-CN") }}
+  <div>
+    <a href="https://beian.miit.gov.cn" style="border-bottom: none;">
+      浙ICP备2024085492号-1
+    </a> &nbsp;
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=33019202002423"
+       style="border-bottom: none;"
+       target="_blank"
+       rel="noopener noreferrer">
+      浙公网安备33019202002423号
+    </a>
+  </div>
+  {{- end }}
+
+  <span>
+    &copy; {{ now.Year }}
+    <a href="{{ "" | absLangURL }}" style="border-bottom: none;">
+      {{ site.Title }}
+    </a>
+  </span>
+  &nbsp;
+  <span>
+    Powered by
+    <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" style="border-bottom: none;">Hugo</a>
+    &
+    <a href="https://github.com/adityatelange/hugo-PaperMod/"
+       target="_blank"
+       rel="noopener"
+       style="border-bottom: none;">PaperMod</a>
+  </span>
+</footer>
+

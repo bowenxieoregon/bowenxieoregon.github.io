@@ -1,0 +1,57 @@
+.chroma {
+    background-color: unset;
+  }
+
+.post-content pre code , 
+.post-content .highlight:not(table) ,
+.post-content .highlight table
+{
+    background: unset !important;
+    background-color: var(--code-bg) !important; /* support light/dark */
+    color: var(--secondary) !important; /* support light/dark */
+    /* overflow-y: visible;
+    overflow-x: visible; */
+}
+.highlight table {
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+
+/* Code scrollbar border */
+.post-content table::-webkit-scrollbar-thumb {
+  border: 5px solid var(--code-bg);
+  background: transparent;
+}
+
+.post-content table::-webkit-scrollbar {
+  height: 19px;
+  width: 19px;
+  /* display: none; */
+}
+
+.post-content table:hover::-webkit-scrollbar-thumb {
+  background: rgba(113, 113, 117, 0.9);
+}
+
+.post-content table::-webkit-scrollbar-corner {
+  background: var(--code-bg);
+}
+
+
+
+.post-content code {
+  color: tomato;
+  margin: 0;
+  padding: 4px 4px;
+  border-radius: 4px;
+}
+.post-content blockquote{
+  color: #6a6a6a;
+  border-inline-start: 3px solid #16A951;
+  font-style: italic;
+}
+
+.copy-code{
+  right: 20px;
+}
