@@ -1,5 +1,6 @@
 ---
-date: '2026-01-03T21:30:04-08:00'
+date: '2026-01-03'
+lastmod: '2026-01-04' 
 draft: false
 title: 'Journey Started'
 comments: true

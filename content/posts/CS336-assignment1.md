@@ -1,5 +1,6 @@
 ---
-date: '2026-01-04'
+date: '2026-01-03'
+lastmod: '2026-01-04' 
 draft: false
 title: 'Building an LLM from Scratch: CS336 Assignment 1'
 description: 'My implementation journey through Stanford CS336 Assignment 1 - building language model components from the ground up.'
@@ -21,6 +22,12 @@ CS336 is Stanford's deep dive into building large language models from first pri
 ## Key Takeaways
 
 ### 1. Byte-Pair Encoding (BPE)
+
+We first need to consider the related Python methods.{{< sidenote >}}BPE was originally developed for data compression but works remarkably well for subword tokenization in NLP.{{< /sidenote >}}
+
+UTF-8 introduction.{{< sidenote >}}UTF-8 is a variable-width encoding that can represent every character in the Unicode standard while remaining backward compatible with ASCII.{{< /sidenote >}} 
+
+
 
 *Coming soon...*
 
