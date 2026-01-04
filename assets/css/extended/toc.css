@@ -1,84 +1,100 @@
+/* ==========================================================================
+   Table of Contents Styles
+   ========================================================================== */
+
 :root {
-    --nav-width: 1380px;
-    --article-width: 650px;
-    --toc-width: 300px;
+  --nav-width: 1380px;
+  --article-width: 650px;
+  --toc-width: 280px;
 }
 
 .toc {
-    margin: 0 2px 40px 2px;
-    border: 1px solid var(--border);
-    background: var(--entry);
-    border-radius: var(--radius);
-    padding: 0.4em;
+  margin: 0 2px 40px 2px;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  border-radius: var(--radius);
+  padding: 0.4em;
 }
 
+/* Wide TOC (sidebar mode) */
 .toc-container.wide {
-    position: absolute;
-    height: 100%;
-    border-right: 1px solid var(--border);
-    left: calc((var(--toc-width) + var(--gap)) * -1);
-    top: calc(var(--gap) * 2);
-    width: var(--toc-width);
+  position: absolute;
+  height: 100%;
+  border-right: 1px solid var(--border);
+  left: calc((var(--toc-width) + var(--gap)) * -1);
+  top: calc(var(--gap) * 2);
+  width: var(--toc-width);
 }
 
 .wide .toc {
-    position: sticky;
-    top: var(--gap);
-    border: unset;
-    background: unset;
-    border-radius: unset;
-    width: 100%;
-    margin: 0 2px 40px 2px;
+  position: sticky;
+  top: var(--gap);
+  border: unset;
+  background: unset;
+  border-radius: unset;
+  width: 100%;
+  margin: 0 2px 40px 2px;
 }
 
 .toc details summary {
-    cursor: zoom-in;
-    margin-inline-start: 20px;
-    padding: 12px 0;
+  cursor: pointer;
+  margin-inline-start: 20px;
+  padding: 12px 0;
+  font-family: var(--font-heading);
+  font-weight: 500;
 }
 
 .toc details[open] summary {
-    font-weight: 500;
+  font-weight: 600;
 }
 
 .toc-container.wide .toc .inner {
-    margin: 0;
+  margin: 0;
 }
 
-.active {
-    font-size: 110%;
-    font-weight: 600;
+.toc .active {
+  font-size: 105%;
+  font-weight: 600;
+  color: var(--primary);
 }
 
 .toc ul {
-    list-style-type: circle;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .toc .inner {
-    margin: 0 0 0 20px;
-    padding: 0px 15px 15px 20px;
-    font-size: 16px;
-
-    /*目录显示高度*/
-    max-height: 83vh;
-    overflow-y: auto;
+  margin: 0 0 0 20px;
+  padding: 0px 15px 15px 20px;
+  font-size: 0.9rem;
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
-.toc .inner::-webkit-scrollbar-thumb { 
-    border: 5px solid var(--entry);
+.toc .inner::-webkit-scrollbar-thumb {
+  border: 5px solid var(--entry);
+  border-radius: 4px;
+}
+
+.toc .inner::-webkit-scrollbar {
+  width: 10px;
 }
 
 .toc li ul {
-    margin-inline-start: calc(var(--gap) * 0.5);
-    list-style-type: none;
+  margin-inline-start: calc(var(--gap) * 0.5);
 }
 
 .toc li {
-    list-style: none;
-    font-size: 0.95rem;
-    padding-bottom: 5px;
+  font-size: 0.9rem;
+  padding-bottom: 6px;
+  line-height: 1.4;
+}
+
+.toc li a {
+  color: var(--secondary);
+  transition: color 0.2s ease;
 }
 
 .toc li a:hover {
-    color: var(--secondary);
+  color: var(--primary);
 }

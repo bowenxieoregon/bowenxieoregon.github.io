@@ -1,57 +1,138 @@
+/* ==========================================================================
+   Custom Styles
+   ========================================================================== */
+
+/* Code blocks */
 .chroma {
-    background-color: unset;
-  }
-
-.post-content pre code , 
-.post-content .highlight:not(table) ,
-.post-content .highlight table
-{
-    background: unset !important;
-    background-color: var(--code-bg) !important; /* support light/dark */
-    color: var(--secondary) !important; /* support light/dark */
-    /* overflow-y: visible;
-    overflow-x: visible; */
+  background-color: unset;
 }
+
+.post-content pre code,
+.post-content .highlight:not(table),
+.post-content .highlight table {
+  background: unset !important;
+  background-color: var(--code-bg) !important;
+  color: var(--secondary) !important;
+}
+
 .highlight table {
-    overflow-y: auto;
-    max-height: 500px;
+  overflow-y: auto;
+  max-height: 500px;
 }
 
+/* Inline code */
+.post-content code {
+  color: #c7254e;
+  background-color: rgba(199, 37, 78, 0.08);
+  margin: 0;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+}
 
-/* Code scrollbar border */
+.dark .post-content code {
+  color: #f8b4c4;
+  background-color: rgba(248, 180, 196, 0.12);
+}
+
+/* Don't style code inside pre blocks */
+.post-content pre code {
+  color: inherit;
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Blockquotes */
+.post-content blockquote {
+  color: var(--secondary);
+  border-inline-start: 3px solid var(--tertiary);
+  font-style: italic;
+  padding-left: 1.2em;
+  margin: 1.5em 0;
+}
+
+/* Links */
+.post-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--primary-rgb), 0.3);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.post-content a:hover {
+  text-decoration-color: var(--primary);
+}
+
+/* Tables */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+}
+
+.post-content th,
+.post-content td {
+  padding: 0.75em 1em;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.post-content th {
+  background-color: var(--code-bg);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+/* Code scrollbar */
 .post-content table::-webkit-scrollbar-thumb {
   border: 5px solid var(--code-bg);
   background: transparent;
 }
 
 .post-content table::-webkit-scrollbar {
-  height: 19px;
-  width: 19px;
-  /* display: none; */
+  height: 12px;
+  width: 12px;
 }
 
 .post-content table:hover::-webkit-scrollbar-thumb {
-  background: rgba(113, 113, 117, 0.9);
+  background: rgba(113, 113, 117, 0.6);
+  border-radius: 6px;
 }
 
 .post-content table::-webkit-scrollbar-corner {
   background: var(--code-bg);
 }
 
-
-
-.post-content code {
-  color: tomato;
-  margin: 0;
-  padding: 4px 4px;
-  border-radius: 4px;
-}
-.post-content blockquote{
-  color: #6a6a6a;
-  border-inline-start: 3px solid #16A951;
-  font-style: italic;
+/* Copy code button */
+.copy-code {
+  right: 16px;
+  top: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
 }
 
-.copy-code{
-  right: 20px;
+/* Horizontal rule */
+.post-content hr {
+  border: none;
+  height: 1px;
+  background: var(--border);
+  margin: 2.5em 0;
+}
+
+/* Lists */
+.post-content ul,
+.post-content ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+.post-content li {
+  margin-bottom: 0.5em;
+}
+
+/* Images */
+.post-content img {
+  border-radius: 8px;
+  margin: 1.5em 0;
 }

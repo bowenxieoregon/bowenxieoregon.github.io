@@ -1,8 +1,151 @@
-body,
-.post-content {
-  font-family: "Lora", "Georgia", serif;
+/* ==========================================================================
+   Typography System - Modern Academic
+   
+   Font Pairing:
+   - Body: Literata (Google's font for long-form reading, scholarly feel)
+   - Headings: Inter (clean, modern, highly legible)
+   - Code: JetBrains Mono (developer-friendly with ligatures)
+   ========================================================================== */
+
+:root {
+  --font-heading: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", Consolas, Monaco, monospace;
 }
 
-code {
-  font-family: "Source Code Pro", "Consolas", "Monaco", monospace;
+/* Base typography */
+body {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.75;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.logo a,
+.menu a {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.post-title {
+  font-size: 2.1rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* Post content */
+.post-content {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.post-content p {
+  margin-bottom: 1.25em;
+}
+
+.post-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-content h3 {
+  font-size: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-content h4 {
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Code */
+code,
+pre,
+.post-content code,
+.post-content pre {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+/* Navigation and UI elements */
+.nav,
+.post-meta,
+.pagination,
+.footer,
+.toc {
+  font-family: var(--font-heading);
+}
+
+.post-meta {
+  font-size: 0.88rem;
+  font-weight: 500;
+  opacity: 0.7;
+}
+
+/* Profile mode */
+.profile .profile_inner h1 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.profile .profile_inner h2 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* Math blocks - ensure proper spacing */
+.post-content .math,
+.post-content .katex-display,
+.post-content .MathJax_Display {
+  margin: 1.5em 0;
+  font-size: 1.05em;
+}
+
+/* Better list styling for technical content */
+.post-content ul,
+.post-content ol {
+  padding-left: 1.75em;
+  margin: 1.25em 0;
+}
+
+.post-content li {
+  margin-bottom: 0.4em;
+  line-height: 1.7;
+}
+
+.post-content li > ul,
+.post-content li > ol {
+  margin: 0.5em 0;
+}
+
+/* Definition-style lists for technical docs */
+.post-content dl {
+  margin: 1.5em 0;
+}
+
+.post-content dt {
+  font-weight: 600;
+  font-family: var(--font-heading);
+  margin-top: 1em;
+}
+
+.post-content dd {
+  margin-left: 1.5em;
+  margin-bottom: 0.5em;
 }
