@@ -76,7 +76,8 @@ params:
 
   math: true
   title: "Bowen Xie's Blog"
-  description: "Notes on CS, AI, Systems and Engineering"
+  description: "Personal blog about Computer Science, AI, Machine Learning, Systems Engineering, and Software Development by Bowen Xie, PhD student at Oregon State University."
+  keywords: ["computer science", "machine learning", "AI", "systems", "software engineering", "PhD", "research", "RNA", "AI for science"]
   author: "Bowen Xie"
   hideAuthor: true
   images:
