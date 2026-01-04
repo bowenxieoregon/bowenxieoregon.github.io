@@ -40,6 +40,14 @@ params:
   TocOpen: true
 
   math: true
+  title: "Bowen Xie's blog"
+  description: "Notes on CS, AI, Systems and Engineering"
+  author: "Bowen Xie"
+  images:
+    - "/images/og-default.png"
+  socialIcons:
+    - name: github
+      url: "https://github.com/bowenxieoregon"
 
 menu:
   main:
