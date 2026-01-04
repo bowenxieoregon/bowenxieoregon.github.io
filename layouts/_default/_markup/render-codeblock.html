@@ -1,0 +1,53 @@
+{{- $lang := .Type | default "text" -}}
+{{- $langDisplay := $lang -}}
+{{- if eq $lang "python" }}{{ $langDisplay = "Python" }}
+{{- else if eq $lang "javascript" }}{{ $langDisplay = "JavaScript" }}
+{{- else if eq $lang "typescript" }}{{ $langDisplay = "TypeScript" }}
+{{- else if eq $lang "go" }}{{ $langDisplay = "Go" }}
+{{- else if eq $lang "rust" }}{{ $langDisplay = "Rust" }}
+{{- else if eq $lang "java" }}{{ $langDisplay = "Java" }}
+{{- else if eq $lang "cpp" }}{{ $langDisplay = "C++" }}
+{{- else if eq $lang "c" }}{{ $langDisplay = "C" }}
+{{- else if eq $lang "bash" }}{{ $langDisplay = "Bash" }}
+{{- else if eq $lang "shell" }}{{ $langDisplay = "Shell" }}
+{{- else if eq $lang "sh" }}{{ $langDisplay = "Shell" }}
+{{- else if eq $lang "zsh" }}{{ $langDisplay = "Zsh" }}
+{{- else if eq $lang "html" }}{{ $langDisplay = "HTML" }}
+{{- else if eq $lang "css" }}{{ $langDisplay = "CSS" }}
+{{- else if eq $lang "scss" }}{{ $langDisplay = "SCSS" }}
+{{- else if eq $lang "json" }}{{ $langDisplay = "JSON" }}
+{{- else if eq $lang "yaml" }}{{ $langDisplay = "YAML" }}
+{{- else if eq $lang "toml" }}{{ $langDisplay = "TOML" }}
+{{- else if eq $lang "sql" }}{{ $langDisplay = "SQL" }}
+{{- else if eq $lang "markdown" }}{{ $langDisplay = "Markdown" }}
+{{- else if eq $lang "md" }}{{ $langDisplay = "Markdown" }}
+{{- else if eq $lang "latex" }}{{ $langDisplay = "LaTeX" }}
+{{- else if eq $lang "tex" }}{{ $langDisplay = "LaTeX" }}
+{{- else }}{{ $langDisplay = $lang | upper }}
+{{- end -}}
+<div class="code-block" data-lang="{{ $langDisplay }}">
+  <div class="code-header">
+    <div class="traffic-lights">
+      <span class="light red"></span>
+      <span class="light yellow"></span>
+      <span class="light green"></span>
+    </div>
+    <div class="code-header-right">
+      <span class="code-lang">{{ $langDisplay }}</span>
+      <button class="copy-btn" title="Copy code">
+        <svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </svg>
+        <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="code-body">
+    <pre class="code-raw" style="display:none;">{{ .Inner }}</pre>
+    {{- highlight .Inner $lang .Options -}}
+  </div>
+</div>
+

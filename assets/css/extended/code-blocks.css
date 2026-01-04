@@ -1,0 +1,207 @@
+/* macOS Terminal-style Code Blocks */
+
+.code-block {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #282a36;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Terminal window header */
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 36px;
+  padding: 0 14px;
+  background: #21222c;
+}
+
+/* Traffic light buttons */
+.traffic-lights {
+  display: flex;
+  gap: 8px;
+}
+
+.traffic-lights .light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.traffic-lights .light.red {
+  background: #ff5f56;
+}
+
+.traffic-lights .light.yellow {
+  background: #ffbd2e;
+}
+
+.traffic-lights .light.green {
+  background: #27c93f;
+}
+
+/* Header right section */
+.code-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Language label */
+.code-lang {
+  font-size: 12px;
+  color: #6272a4;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+}
+
+/* Copy button */
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #6272a4;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  color: #f8f8f2;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.copy-btn .check-icon {
+  display: none;
+  color: #50fa7b;
+}
+
+.copy-btn.copied .copy-icon {
+  display: none;
+}
+
+.copy-btn.copied .check-icon {
+  display: block;
+}
+
+/* Hide raw code */
+.code-raw {
+  display: none !important;
+}
+
+/* Hide theme's default copy button (we have our own in the header) */
+.copy-code {
+  display: none !important;
+}
+
+/* Code body */
+.code-body .highlight {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.code-body .highlight::before,
+.code-body .highlight::after {
+  display: none !important;
+}
+
+.code-body .highlight pre {
+  margin: 0 !important;
+  padding: 16px 20px !important;
+  background: #282a36 !important;
+  overflow-x: auto;
+  border-radius: 0 0 8px 8px !important;
+}
+
+.code-body .highlight pre code {
+  background: transparent !important;
+  padding: 0 !important;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "JetBrains Mono", "SF Mono", "Fira Code", "Menlo", monospace;
+  tab-size: 2;
+}
+
+/* Scrollbar */
+.code-body pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-body pre::-webkit-scrollbar-track {
+  background: #21222c;
+  border-radius: 4px;
+}
+
+.code-body pre::-webkit-scrollbar-thumb {
+  background: #44475a;
+  border-radius: 4px;
+}
+
+.code-body pre::-webkit-scrollbar-thumb:hover {
+  background: #6272a4;
+}
+
+/* Light mode - keep code blocks dark */
+[data-theme="light"] .code-block {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Inline code */
+.post-content code:not(pre code) {
+  background: var(--code-bg);
+  padding: 0.2em 0.45em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+}
+
+/* Fallback for highlight blocks not using render hook */
+.post-content > .highlight {
+  position: relative;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #282a36;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.post-content > .highlight::before {
+  content: "";
+  display: block;
+  height: 36px;
+  background: #21222c;
+}
+
+.post-content > .highlight::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ff5f56;
+  box-shadow: 
+    20px 0 0 #ffbd2e,
+    40px 0 0 #27c93f;
+}
+
+.post-content > .highlight pre {
+  margin: 0;
+  padding: 16px 20px;
+  background: #282a36;
+}
+
+.post-content > .highlight pre code {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+}

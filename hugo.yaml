@@ -32,8 +32,9 @@ markup:
   highlight:
     codeFences: true
     guessSyntax: true
-    lineNos: true
-    style: abap
+    lineNos: false
+    noClasses: true
+    style: dracula
   goldmark:
     extensions:
       passthrough:
