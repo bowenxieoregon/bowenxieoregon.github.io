@@ -26,6 +26,19 @@ markup:
     lineNos: false
 
 params:
+  comments: true
+
+  giscus:
+    repo: "bowenxieoregon/bowenxieoregon.github.io"
+    repoID: "R_kgDOQzU3pw"
+    category: "General"
+    categoryID: "DIC_kwDOQzU3p84C0jXY"
+    mapping: "pathname"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    theme: "preferred_color_scheme"
+    lang: "en"
+
   env: production
 
   defaultTheme: auto
