@@ -115,6 +115,8 @@ params:
       url: "https://x.com/AlexBenton_OR"
     - name: "Github"
       url: "https://github.com/bowenxieoregon"
+    - name: "LinkedIn"
+      url: "http://linkedin.com/in/bowen-xie-773375262"
     - name: "email"
       url: "mailto:xiebo@oregonstate.edu"
     - name: "RSS"
