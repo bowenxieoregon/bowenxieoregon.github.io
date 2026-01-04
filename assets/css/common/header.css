@@ -41,13 +41,41 @@ button#theme-toggle {
     margin: auto 4px;
 }
 
-body.dark #moon {
-    vertical-align: middle;
+/* Dark mode - hide moon, show sun */
+[data-theme="dark"] #moon {
     display: none;
 }
 
-body:not(.dark) #sun {
+/* Light mode - hide sun, show moon */
+[data-theme="light"] #sun {
     display: none;
+}
+
+/* Auto mode - follow system preference */
+[data-theme="auto"] #moon {
+    display: none;
+}
+
+[data-theme="auto"] #sun {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-theme="auto"] #moon {
+        display: none;
+    }
+    [data-theme="auto"] #sun {
+        display: inline-block;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    [data-theme="auto"] #sun {
+        display: none;
+    }
+    [data-theme="auto"] #moon {
+        display: inline-block;
+    }
 }
 
 #menu {
