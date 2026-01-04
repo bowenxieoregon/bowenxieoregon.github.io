@@ -1,6 +1,6 @@
 ---
 date: '2026-01-04'
-draft: true
+draft: false
 title: 'Diffusion Models for Continuous and Discrete Data'
 description: 'A unified view of diffusion models: from the continuous DDPM formulation to discrete diffusion for language and graphs.'
 tags: ['Diffusion Models', 'Generative Models', 'Deep Learning', 'Theory']
