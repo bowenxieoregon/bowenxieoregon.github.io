@@ -35,6 +35,20 @@ markup:
     lineNos: true
     style: abap
   goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+            - - $
+              - $
+        enable: true
     renderer:
       unsafe: true
 
