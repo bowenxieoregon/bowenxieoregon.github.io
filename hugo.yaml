@@ -1,0 +1,12 @@
+baseURL: https://bowenxie.github.io/
+languageCode: en-us
+title: Bowen Xie's Blog
+
+theme: ["PaperMod"]
+
+params:
+  profileMode:
+    enabled:  false
+    title: "Bowen Xie"
+    subtitle: "Notes on CS/AI/Systems"
+  defaultTheme: auto

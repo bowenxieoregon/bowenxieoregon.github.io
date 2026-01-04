@@ -1,0 +1,12 @@
+# Hugo build output
+public/
+resources/
+
+# Hugo runtime
+.hugo_build.lock
+
+# OS / editor
+.DS_Store
+*.swp
+*.swo
+
