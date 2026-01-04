@@ -2,6 +2,7 @@
 date: '2026-01-03T21:30:04-08:00'
 draft: false
 title: 'Hello World'
+comments: true
 ---
 
 This is my first Hugo post.
