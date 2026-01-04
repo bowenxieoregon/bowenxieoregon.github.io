@@ -1,0 +1,5 @@
+{{- $id := .Get "id" | default (printf "mn-%d" .Ordinal) -}}
+<label for="{{ $id }}" class="marginnote-number"></label>
+<input type="checkbox" id="{{ $id }}" class="marginnote-checkbox" />
+<span class="marginnote">{{ .Inner | markdownify }}</span>
+

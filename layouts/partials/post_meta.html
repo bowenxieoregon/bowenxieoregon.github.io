@@ -1,11 +1,12 @@
 {{- $scratch := newScratch }}
 
 {{- if not .Date.IsZero -}}
-{{- $scratch.Add "meta" (slice (printf "Published on %s %d" (.Date.Month) (.Date.Day))) }}
+{{- $scratch.Add "meta" (slice (printf "Published on %s %d, %d" (.Date.Month) (.Date.Day) (.Date.Year))) }}
 {{- end }}
 
-{{- if not .Lastmod.IsZero -}}
-{{- $scratch.Add "meta" (slice (printf "Updated on %s %d" (.Lastmod.Month) (.Lastmod.Day))) }}
+{{- /* Only show "Updated on" if lastmod is different from date */ -}}
+{{- if and (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) -}}
+{{- $scratch.Add "meta" (slice (printf "Updated on %s %d, %d" (.Lastmod.Month) (.Lastmod.Day) (.Lastmod.Year))) }}
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}

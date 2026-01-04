@@ -1,0 +1,137 @@
+/* Sidenotes & Margin Notes - Tufte-inspired */
+
+/* Initialize counter on the post content */
+.post-content {
+  counter-reset: sidenote-counter;
+}
+
+/* Container setup - extend post content for margin notes */
+.post-single {
+  display: grid;
+  grid-template-columns: 1fr min(720px, 100%) 1fr;
+}
+
+.post-single > * {
+  grid-column: 2;
+}
+
+.post-header,
+.post-content {
+  grid-column: 2;
+}
+
+/* Sidenote number in text (superscript) */
+.sidenote-number,
+.marginnote-number {
+  counter-increment: sidenote-counter;
+  cursor: pointer;
+  user-select: none;
+}
+
+.sidenote-number::after,
+.marginnote-number::after {
+  content: counter(sidenote-counter);
+  font-size: 0.75em;
+  vertical-align: super;
+  color: var(--primary);
+  font-weight: 600;
+  margin-left: 1px;
+}
+
+.sidenote-number:hover::after,
+.marginnote-number:hover::after {
+  color: var(--secondary);
+}
+
+/* Hidden checkboxes for mobile toggle */
+.sidenote-checkbox,
+.marginnote-checkbox {
+  display: none;
+}
+
+/* The actual sidenote/marginnote */
+.sidenote,
+.marginnote {
+  float: right;
+  clear: right;
+  margin-right: -45%;
+  width: 40%;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--secondary);
+  position: relative;
+}
+
+/* Number prefix in the margin */
+.sidenote::before,
+.marginnote::before {
+  content: counter(sidenote-counter) ". ";
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Both sidenotes and marginnotes now share the same numbered style */
+
+/* Wide screen: always show in margin */
+@media (min-width: 1200px) {
+  .sidenote-number,
+  .marginnote-number {
+    cursor: default;
+  }
+  
+  .sidenote,
+  .marginnote {
+    display: block !important;
+  }
+}
+
+/* Medium screens: narrower margin */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .sidenote,
+  .marginnote {
+    margin-right: -35%;
+    width: 30%;
+  }
+}
+
+/* Small screens: inline with toggle */
+@media (max-width: 899px) {
+  .sidenote,
+  .marginnote {
+    display: none;
+    float: none;
+    width: 100%;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.75rem 1rem;
+    background: var(--code-bg);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary);
+  }
+  
+  /* Show when checkbox is checked */
+  .sidenote-checkbox:checked + .sidenote,
+  .marginnote-checkbox:checked + .marginnote {
+    display: block;
+  }
+  
+  .sidenote-number,
+  .marginnote-number {
+    cursor: pointer;
+  }
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .sidenote,
+[data-theme="dark"] .marginnote {
+  color: var(--secondary);
+}
+
+@media (max-width: 899px) {
+  [data-theme="dark"] .sidenote,
+  [data-theme="dark"] .marginnote {
+    background: var(--code-bg);
+  }
+}
+
