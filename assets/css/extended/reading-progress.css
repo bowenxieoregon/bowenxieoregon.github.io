@@ -1,0 +1,22 @@
+/* Reading Progress Bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+}
+
+/* Only show on post pages - hidden by default, JS enables it */
+.reading-progress {
+  display: none;
+}
+
+.reading-progress.active {
+  display: block;
+}
+

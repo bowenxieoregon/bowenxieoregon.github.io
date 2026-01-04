@@ -1,5 +1,8 @@
 {{/* Custom footer extensions */}}
 
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="reading-progress"></div>
+
 <script>
 // Copy code button functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -31,4 +34,54 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// Reading Progress Bar
+(function() {
+  const progressBar = document.getElementById('reading-progress');
+  
+  // Only show on blog post pages (URL contains /posts/)
+  const isPostPage = window.location.pathname.includes('/posts/') && 
+                     window.location.pathname !== '/posts/';
+  const postContent = document.querySelector('.post-content');
+  
+  if (!isPostPage || !postContent || !progressBar) return;
+  
+  progressBar.classList.add('active');
+  
+  function updateProgress() {
+    const postRect = postContent.getBoundingClientRect();
+    const postTop = postRect.top + window.scrollY;
+    const postHeight = postContent.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+    
+    // Calculate how much of the post has been scrolled through
+    const start = postTop;
+    const end = postTop + postHeight - windowHeight;
+    
+    let progress = 0;
+    if (scrollY >= start && scrollY <= end) {
+      progress = ((scrollY - start) / (end - start)) * 100;
+    } else if (scrollY > end) {
+      progress = 100;
+    }
+    
+    progressBar.style.width = progress + '%';
+  }
+  
+  // Update on scroll with throttling for performance
+  let ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // Initial update
+  updateProgress();
+})();
 </script>
