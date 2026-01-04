@@ -63,6 +63,17 @@ params:
   hideFooter: true
   ShowAllPagesInArchive: true
 
+  # Fuse.js search configuration
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.1
+    minMatchCharLength: 3
+    limit: 10
+    keys: ["title", "summary"]
+
   math: true
   title: "Bowen Xie's Blog"
   description: "Notes on CS, AI, Systems and Engineering"

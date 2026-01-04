@@ -10,7 +10,7 @@ comments: true
 
 Write your introduction here. This is the opening paragraph that hooks the reader.
 
-## Section Heading
+## My journey of learning C++ move semantics
 
 Regular paragraph text goes here. You can use **bold**, *italic*, and `inline code`.
 
@@ -26,6 +26,17 @@ Here's a bullet list:
 ```python
 def hello_world():
     print("Hello, World!")
+```
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout << "Hello World" << endl;
+    return 0;
+}
 ```
 
 ### Math Example
