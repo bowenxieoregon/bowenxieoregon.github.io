@@ -1,6 +1,6 @@
 ---
 title: "About"
-layout: "page"
+layout: "static-page"
 url: "/about/"
 searchHidden: true
 ---

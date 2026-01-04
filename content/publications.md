@@ -1,6 +1,6 @@
 ---
 title: "Publications"
-layout: "page"
+layout: "static-page"
 url: "/publications/"
 searchHidden: true
 ---
