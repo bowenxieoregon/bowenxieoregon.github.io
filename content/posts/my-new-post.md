@@ -1,6 +1,6 @@
 ---
 date: '2026-01-04'
-draft: true
+draft: false
 title: 'My New Post'
 description: 'A brief description of this post'
 tags: ['tag1', 'tag2']
