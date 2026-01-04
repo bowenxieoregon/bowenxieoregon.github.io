@@ -29,6 +29,7 @@ params:
   comments: true
 
   giscus:
+    enabled: true
     repo: "bowenxieoregon/bowenxieoregon.github.io"
     repoID: "R_kgDOQzU3pw"
     category: "General"
