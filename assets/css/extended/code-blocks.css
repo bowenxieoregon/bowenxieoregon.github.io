@@ -126,8 +126,11 @@
   padding: 0 !important;
   font-size: 14px;
   line-height: 1.6;
-  font-family: "JetBrains Mono", "SF Mono", "Fira Code", "Menlo", monospace;
+  font-family: "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
   tab-size: 2;
+  font-variant-ligatures: none;
+  -webkit-font-feature-settings: "liga" 0, "calt" 0;
+  font-feature-settings: "liga" 0, "calt" 0;
 }
 
 /* Scrollbar */
@@ -203,5 +206,8 @@
 .post-content > .highlight pre code {
   font-size: 14px;
   line-height: 1.6;
-  font-family: "JetBrains Mono", "SF Mono", "Fira Code", monospace;
+  font-family: "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
+  font-variant-ligatures: none;
+  -webkit-font-feature-settings: "liga" 0, "calt" 0;
+  font-feature-settings: "liga" 0, "calt" 0;
 }
