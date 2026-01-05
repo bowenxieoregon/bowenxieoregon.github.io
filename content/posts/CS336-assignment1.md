@@ -27,6 +27,8 @@ We first need to consider the related Python methods.{{< sidenote >}}BPE was ori
 
 UTF-8 introduction.{{< sidenote >}}UTF-8 is a variable-width encoding that can represent every character in the Unicode standard while remaining backward compatible with ASCII.{{< /sidenote >}} 
 
+Regular expression. {{< sidenote >}} Regular expression like `[?.,]`{{< /sidenote >}}
+
 
 
 *Coming soon...*
